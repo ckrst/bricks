@@ -31,7 +31,7 @@ CREATE TABLE `campo` (
   PRIMARY KEY (`id`),
   KEY `fk_campo_objeto_idx` (`objeto_id`),
   CONSTRAINT `fk_campo_objeto` FOREIGN KEY (`objeto_id`) REFERENCES `objeto` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `campo` (
 
 LOCK TABLES `campo` WRITE;
 /*!40000 ALTER TABLE `campo` DISABLE KEYS */;
-INSERT INTO `campo` VALUES (1,1,'Nome',0,0);
+INSERT INTO `campo` VALUES (1,1,'Nome',1,1),(2,1,'Email',1,2),(3,3,'Número',1,1);
 /*!40000 ALTER TABLE `campo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `chave` (
   PRIMARY KEY (`id`),
   KEY `fk_chave_objeto_idx` (`objeto_id`),
   CONSTRAINT `fk_chave_objeto` FOREIGN KEY (`objeto_id`) REFERENCES `objeto` (`id`) ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +66,7 @@ CREATE TABLE `chave` (
 
 LOCK TABLES `chave` WRITE;
 /*!40000 ALTER TABLE `chave` DISABLE KEYS */;
+INSERT INTO `chave` VALUES (1,1),(2,1);
 /*!40000 ALTER TABLE `chave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,8 +105,11 @@ CREATE TABLE `valor` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `campo_id` bigint(20) NOT NULL,
   `valor_campo` text,
+  `chave_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_valor_campo_idx` (`campo_id`),
+  KEY `fk_valor_chave_idx` (`chave_id`),
+  CONSTRAINT `fk_valor_chave` FOREIGN KEY (`chave_id`) REFERENCES `chave` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -116,7 +120,7 @@ CREATE TABLE `valor` (
 
 LOCK TABLES `valor` WRITE;
 /*!40000 ALTER TABLE `valor` DISABLE KEYS */;
-INSERT INTO `valor` VALUES (1,1,'Fulano'),(2,1,'Foo');
+INSERT INTO `valor` VALUES (1,1,'Fulano',1),(2,1,'Foo',2);
 /*!40000 ALTER TABLE `valor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-02-10 13:11:37
+-- Dump completed on 2014-02-10 15:24:21
