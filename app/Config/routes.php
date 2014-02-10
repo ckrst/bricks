@@ -42,6 +42,7 @@
 	Router::mapResources(array(
 	'Objetos',
 	'Campos',
+	'Chaves',
 	'Valores'
 	));
 	
