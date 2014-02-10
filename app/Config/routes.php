@@ -41,7 +41,8 @@
 
 	Router::mapResources(array(
 	'Objetos',
-	'Campos'
+	'Campos',
+	'Valores'
 	));
 	
 	Router::parseExtensions();
