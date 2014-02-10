@@ -73,5 +73,10 @@ class ObjetosController extends AppController {
 				'_serialize' => array('message')
 		));
 	}
+	
+	
+	public function editor()
+	{
+	}
 }
 
