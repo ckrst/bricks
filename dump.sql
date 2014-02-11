@@ -31,7 +31,7 @@ CREATE TABLE `campo` (
   PRIMARY KEY (`id`),
   KEY `fk_campo_objeto_idx` (`objeto_id`),
   CONSTRAINT `fk_campo_objeto` FOREIGN KEY (`objeto_id`) REFERENCES `objeto` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `campo` (
 
 LOCK TABLES `campo` WRITE;
 /*!40000 ALTER TABLE `campo` DISABLE KEYS */;
-INSERT INTO `campo` VALUES (1,1,'Nome',1,1),(2,1,'Email',1,2),(3,3,'Número',1,1);
+INSERT INTO `campo` VALUES (1,1,'Nome',1,1),(2,1,'Email',1,2),(3,3,'Numero',1,1),(4,2,'Nome',1,0),(5,6,'Nome',1,0),(6,3,'Nome',1,0),(7,3,'EndereÃ§o',1,0),(8,7,'SKU',1,0);
 /*!40000 ALTER TABLE `campo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,7 @@ CREATE TABLE `objeto` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `objeto` (
 
 LOCK TABLES `objeto` WRITE;
 /*!40000 ALTER TABLE `objeto` DISABLE KEYS */;
-INSERT INTO `objeto` VALUES (1,'Cliente'),(2,'Fornecedor'),(3,'Nome');
+INSERT INTO `objeto` VALUES (1,'Cliente'),(2,'Fornecedor'),(3,'Empresa'),(4,'Tarefa'),(5,'Tarefa'),(6,'Projeto'),(7,'Produto');
 /*!40000 ALTER TABLE `objeto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,8 +109,8 @@ CREATE TABLE `valor` (
   PRIMARY KEY (`id`),
   KEY `fk_valor_campo_idx` (`campo_id`),
   KEY `fk_valor_chave_idx` (`chave_id`),
-  CONSTRAINT `fk_valor_chave` FOREIGN KEY (`chave_id`) REFERENCES `chave` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_valor_chave` FOREIGN KEY (`chave_id`) REFERENCES `chave` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -123,6 +123,33 @@ LOCK TABLES `valor` WRITE;
 INSERT INTO `valor` VALUES (1,1,'Fulano',1),(2,1,'Foo',2);
 /*!40000 ALTER TABLE `valor` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `widget`
+--
+
+DROP TABLE IF EXISTS `widget`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `widget` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `objeto_id` bigint(20) NOT NULL,
+  `tipo` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_widget_objeto_idx` (`objeto_id`),
+  CONSTRAINT `fk_widget_objeto` FOREIGN KEY (`objeto_id`) REFERENCES `objeto` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `widget`
+--
+
+LOCK TABLES `widget` WRITE;
+/*!40000 ALTER TABLE `widget` DISABLE KEYS */;
+/*!40000 ALTER TABLE `widget` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -133,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-02-10 15:24:21
+-- Dump completed on 2014-02-11 17:55:46
