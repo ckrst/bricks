@@ -28,6 +28,29 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					
+					
+					<div class="dropdown">
+						<button class="btn" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-cog"></span>
+						</button>
+						
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<li>
+								<a href="#">
+									<span class="glyphicon glyphicon-pencil"></span>
+									Editar
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="glyphicon glyphicon-trash"></span>
+									Remover
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					
 					<div id="divObjectEditor"></div>
 					
 				</div>
@@ -36,6 +59,7 @@
 	</div>
 </div>
 
+<!-- Novo Objeto -->
 <div class="modal fade" id="divFormObjeto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -48,7 +72,7 @@
 				
 				<form id="frmNovoObjeto" role="form">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Nome</label>
+						<label for="txtNomeObjeto">Nome</label>
 						<input type="text" class="form-control" id="txtNomeObjeto" placeholder="Ex: Cliente">
 					</div>
 				</form>
@@ -57,13 +81,49 @@
 			
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-primary" id="btnSalvarNovoObjeto">Salvar</button>
+				<button type="button" class="btn btn-primary" id="btnSalvarNovoObjeto" data-dismiss="modal">Salvar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Novo Campo -->
+<div class="modal fade" id="divFormCampo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Novo Campo</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<form id="frmNovoObjeto" role="form">
+					<div class="form-group">
+						<label for="txtNomeCampo">Nome</label>
+						<input type="text" class="form-control" id="txtNomeCampo" placeholder="Ex: Cliente">
+					</div>
+					<div class="form-group">
+						<label for="selTipoCampo">Tipo</label>
+						<select name="tipo" id="selTipoCampo">
+							<option value="1">Texto</option>
+						</select>
+					</div>
+				</form>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id="btnSalvarNovoCampo" data-dismiss="modal">Salvar</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
+
+var idObj = "";
 
 function reloadObjetos(){
 	$("#ulListaObjetos").html("");
@@ -84,27 +144,47 @@ function reloadObjetos(){
 
 function editObject(id)
 {
+	
 	$.ajax({
 		url: "/bricks/objetos/" + id + ".json",
 		type: "GET",
 		dataType: "json",
 		success: function(response){
+
+
+			idObj = id;
+			
 			var objeto = response.objeto.Objeto;
 			var campos = response.objeto.Campo;
 
-			var ulListaCampos = $("<ul>").addClass("list-group");
-
+			var ulListaCampos = $("<table>").addClass("table");
+			ulListaCampos.append($("<tr>").append($("<th>").append("Campo")).append($("<th>").append("Tipo")));
 			for (i in campos) {
-				ulListaCampos.append($("<li>").addClass("list-group-item").append(campos[i].nome));
+				ulListaCampos.append($("<tr>").append($("<td>").append(campos[i].nome)).append($("<td>").append(campos[i].tipo)));
 			}
 
 			var div = $("<div>").addClass("panel panel-default").append(
 				$("<div>").addClass("panel-heading").append(objeto.nome)
 			). append(
-				$("<div>").addClass("panel-body").append(ulListaCampos)
-			);
+				$("<div>").addClass("panel-body").append("<button type=\"button\" class=\"btn btn-primary pull-right\" data-toggle=\"modal\" data-target=\"#divFormCampo\">+</button>")
+			).append(ulListaCampos);
 
 			$("#divObjectEditor").html(div);
+		}
+	});
+}
+
+function salvarCampo(idObjeto)
+{
+	var nome = $("#txtNomeCampo").val();
+	var tipo = $("#selTipoCampo").val();
+	$.ajax({
+		url: "/bricks/campos.json",
+		data: "objeto_id=" + idObjeto + "&nome=" + nome + "&tipo=" + tipo,
+		type: "POST",
+		dataType: "json",
+		success: function(response){
+			editObject(idObjeto);
 		}
 	});
 }
@@ -122,6 +202,9 @@ $(document).ready(function(){
 				reloadObjetos();
 			}
 		});
+	});
+	$("#btnSalvarNovoCampo").click(function(){
+		salvarCampo(idObj);
 	});
 	
 	reloadObjetos();

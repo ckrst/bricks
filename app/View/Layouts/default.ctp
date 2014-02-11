@@ -54,7 +54,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Brand</a>
+						<a class="navbar-brand" href="#">Brix</a>
 					</div>
 				</div>
 			</nav>
