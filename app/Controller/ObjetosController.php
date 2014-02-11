@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class ObjetosController extends AppController {
 
-	public $uses = array('Objeto');
+	public $uses = array('Objeto', 'Campo', 'Chave', 'Valor');
 	
 	public $components = array('RequestHandler');
 
@@ -18,9 +18,7 @@ class ObjetosController extends AppController {
 	 * Exibe uma lista de objetos
 	 */
 	public function index() {
-
 		$objetos = $this->Objeto->find('all');
-
 		$this->set(array(
             'objetos' => $objetos,
             '_serialize' => array('objetos')
@@ -73,7 +71,6 @@ class ObjetosController extends AppController {
 				'_serialize' => array('message')
 		));
 	}
-	
 	
 	public function editor()
 	{
