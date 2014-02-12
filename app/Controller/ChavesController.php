@@ -2,7 +2,7 @@
 
 /**
  * Arquivo ChavesController.php
- * @author Vinícius Kirst <vinicius@versul.com.br>
+ * @author Vinícius Kirst <vinicius.kirst@gmail.com>
  */
 
 App::uses('AppController', 'Controller');

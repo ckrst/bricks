@@ -43,7 +43,8 @@
 	'Objetos',
 	'Campos',
 	'Chaves',
-	'Valores'
+	'Valores',
+	'Widgets'
 	));
 	
 	Router::parseExtensions();

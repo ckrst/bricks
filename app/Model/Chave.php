@@ -9,4 +9,9 @@ class Chave extends AppModel {
 	public $belongsTo = 'Objeto';
 	public $hasMany = 'Valor';
 	
+	public function getValor($campoId)
+	{
+		return $this->Valor->find('first', array('conditions' => array('chave_id' => $this->id, 'campo_id' => $campoId)));
+	}
+	
 }
