@@ -4909,3 +4909,470 @@ Request URL: /bricks/js/bootstrap-fileinput.js
 Stack Trace:
 #0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-02-14 09:47:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:47:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:47:16 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:47:37 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`coisa1`.`valor`, CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+Request URL: /bricks/valores.json
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `co...', Array)
+#2 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(1003): DboSource->execute('INSERT INTO `co...')
+#3 /opt/lampp/htdocs/bricks/lib/Cake/Model/Model.php(1830): DboSource->create(Object(Valor), Array, Array)
+#4 /opt/lampp/htdocs/bricks/app/Controller/ValoresController.php(35): Model->save(Array)
+#5 [internal function]: ValoresController->add()
+#6 /opt/lampp/htdocs/bricks/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ValoresController), Array)
+#7 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ValoresController), Object(CakeRequest), Object(CakeResponse))
+#9 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-02-14 09:54:56 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`coisa1`.`valor`, CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+Request URL: /bricks/valores.json
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `co...', Array)
+#2 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(1003): DboSource->execute('INSERT INTO `co...')
+#3 /opt/lampp/htdocs/bricks/lib/Cake/Model/Model.php(1830): DboSource->create(Object(Valor), Array, Array)
+#4 /opt/lampp/htdocs/bricks/app/Controller/ValoresController.php(35): Model->save(Array)
+#5 [internal function]: ValoresController->add()
+#6 /opt/lampp/htdocs/bricks/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ValoresController), Array)
+#7 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ValoresController), Object(CakeRequest), Object(CakeResponse))
+#9 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-02-14 09:55:34 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`coisa1`.`valor`, CONSTRAINT `fk_valor_campo` FOREIGN KEY (`campo_id`) REFERENCES `campo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+Request URL: /bricks/valores.json
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `co...', Array)
+#2 /opt/lampp/htdocs/bricks/lib/Cake/Model/Datasource/DboSource.php(1003): DboSource->execute('INSERT INTO `co...')
+#3 /opt/lampp/htdocs/bricks/lib/Cake/Model/Model.php(1830): DboSource->create(Object(Valor), Array, Array)
+#4 /opt/lampp/htdocs/bricks/app/Controller/ValoresController.php(35): Model->save(Array)
+#5 [internal function]: ValoresController->add()
+#6 /opt/lampp/htdocs/bricks/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ValoresController), Array)
+#7 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /opt/lampp/htdocs/bricks/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ValoresController), Object(CakeRequest), Object(CakeResponse))
+#9 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-02-14 09:56:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:56:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:56:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:57:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:58:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:58:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:58:46 Error: Fatal Error (1): Call to undefined method WidgetsController::flashError() in [/opt/lampp/htdocs/bricks/app/Controller/WidgetsController.php, line 79]
+2014-02-14 09:58:46 Error: [FatalErrorException] Call to undefined method WidgetsController::flashError()
+Request URL: /bricks/widgets/run/3
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 79)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 79, Array)
+#2 /opt/lampp/htdocs/bricks/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 79, Array)
+#3 /opt/lampp/htdocs/bricks/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-14 09:58:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:58:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 09:58:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:23:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:23:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:25:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:25:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:25:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:27:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:27:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:29:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:29:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:29:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:30:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:30:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:31:58 Error: Fatal Error (1): Call to undefined method WidgetsController::flashError() in [/opt/lampp/htdocs/bricks/app/Controller/WidgetsController.php, line 79]
+2014-02-14 15:31:58 Error: [FatalErrorException] Call to undefined method WidgetsController::flashError()
+Request URL: /bricks/widgets/run/4
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 79)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 79, Array)
+#2 /opt/lampp/htdocs/bricks/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 79, Array)
+#3 /opt/lampp/htdocs/bricks/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-14 15:31:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:31:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:34:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:35:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:35:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:35:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:36:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:36:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:37:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:37:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-14 15:37:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /bricks/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/bricks/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

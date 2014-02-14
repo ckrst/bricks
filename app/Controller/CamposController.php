@@ -38,7 +38,7 @@ class CamposController extends AppController {
 			$message = 'Error';
 		}
 		$this->set(array(
-				'message' => $message,
+				'data' => array('message' => $message, 'id' => $this->Campo->id),
 				'_serialize' => array('message')
 		));
 	}

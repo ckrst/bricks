@@ -48,8 +48,8 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<span class="glyphicon glyphicon-trash"></span>
+								<a href="#" data-toggle="modal" data-target="#divFormWidget">
+									<span class="glyphicon glyphicon-hdd"></span>
 									Gerar widget
 								</a>
 							</li>
@@ -104,7 +104,7 @@
 			
 			<div class="modal-body">
 				
-				<form id="frmNovoObjeto" role="form">
+				<form id="frmNovoCampo" role="form">
 					<div class="form-group">
 						<label for="txtNomeCampo">Nome</label>
 						<input type="text" class="form-control" id="txtNomeCampo" placeholder="Ex: Cliente">
@@ -126,6 +126,43 @@
 		</div>
 	</div>
 </div>
+
+<!-- Gerar widget -->
+<div class="modal fade" id="divFormWidget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Novo Widget</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<form id="frmNovoWidget" role="form">
+					<div class="form-group">
+						<label for="txtNomeWidget">Nome</label>
+						<input type="text" class="form-control" id="txtNomeWidget">
+					</div>
+					<div class="form-group">
+						<label for="selTipoWidget">Tipo</label>
+						<select name="tipo" id="selTipoWidget">
+							<option value="<?php echo WIDGET_TIPO_TABELA; ?>">Tabela</option>
+							<option value="<?php echo WIDGET_TIPO_BUTTON_POPUP_INSERTER; ?>">Button Popup Insert</option>
+						</select>
+					</div>
+				</form>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id="btnSalvarNovoWidget" data-dismiss="modal">Salvar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Gerar widget -->
+
 
 <script type="text/javascript">
 
@@ -211,6 +248,20 @@ $(document).ready(function(){
 	});
 	$("#btnSalvarNovoCampo").click(function(){
 		salvarCampo(idObj);
+	});
+
+	$("#btnSalvarNovoWidget").click(function(){
+		var nome = $("#txtNomeWidget").val();
+		var tipo = $("#selTipoWidget").val();
+		$.ajax({
+			url: "/bricks/widgets.json",
+			data: "nome=" + nome + "&tipo=" + tipo + "&objeto_id=" + idObj,
+			type: "POST",
+			dataType: "json",
+			success: function(response){
+				reloadObjetos();
+			}
+		});
 	});
 	
 	reloadObjetos();

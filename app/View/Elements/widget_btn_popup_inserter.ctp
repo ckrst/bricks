@@ -18,7 +18,7 @@
 						?>
 						<div class="form-group">
 							<label for="formWidget<?php echo $campo['Campo']['id']; ?>Campo<?php echo $campo['Campo']['id']; ?>"><?php echo $campo['Campo']['nome']; ?></label>
-							<input type="text" class="form-control" id="formWidget<?php echo $campo['Campo']['id']; ?>Campo<?php echo $campo['Campo']['id']; ?>" campo="<?php echo $campo['Campo']['id']; ?>">
+							<input type="text" class="form-control CAMPO_OBJETO" id="formWidget<?php echo $campo['Campo']['id']; ?>Campo<?php echo $campo['Campo']['id']; ?>" campo="<?php echo $campo['Campo']['id']; ?>">
 						</div>
 						<?php 
 					}
@@ -29,7 +29,7 @@
 			
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-primary CAMPO_OBJETO" id="btnSalvarNovoObjeto" onclick="insertObj<?php $objeto['Objeto']['id']; ?>();">Salvar</button>
+				<button type="button" class="btn btn-primary" id="btnSalvarNovoObjeto" onclick="insertObj<?php $objeto['Objeto']['id']; ?>();">Salvar</button>
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 				type: "POST",
 				dataType: "json",
 				success: function(response) {
-					var chave_id = response.chave;
+					var chave_id = response.data.id;
 					$(".CAMPO_OBJETO").each(function() {
 						var campo = $(this).attr("campo");
 						var valor = $(this).val();

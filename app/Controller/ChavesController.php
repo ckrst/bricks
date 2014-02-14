@@ -38,8 +38,8 @@ class ChavesController extends AppController {
 			$message = 'Error';
 		}
 		$this->set(array(
-				'message' => $message,
-				'_serialize' => array('message')
+				'data' => array('message' => $message, 'id' => $this->Chave->id),
+				'_serialize' => array('data')
 		));
 	}
 
