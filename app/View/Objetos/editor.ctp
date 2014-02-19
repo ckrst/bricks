@@ -112,7 +112,8 @@
 					<div class="form-group">
 						<label for="selTipoCampo">Tipo</label>
 						<select name="tipo" id="selTipoCampo">
-							<option value="1">Texto</option>
+							<option value="<?php echo CAMPO_TIPO_TEXTO_LIVRE; ?>">Texto</option>
+							<option value="<?php echo CAMPO_TIPO_NUMERO_INTEIRO; ?>">Número inteiro</option>
 						</select>
 					</div>
 				</form>

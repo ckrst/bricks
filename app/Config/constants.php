@@ -3,7 +3,8 @@
 /*
  * TIPOS DE CAMPOS
  */
-define('CAMPO_TIPO_TEXTO_LIVRE', 1);
+define('CAMPO_TIPO_TEXTO_LIVRE', 	1);
+define('CAMPO_TIPO_NUMERO_INTEIRO', 2);
 
 /*
  * TIPOS DE WIDGETS
