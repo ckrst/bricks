@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class MashupsController extends AppController {
 
-	public $uses = array('Mashup', 'Campo', 'Chave', 'Valor');
+	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor');
 	
 	public $components = array('RequestHandler');
 
@@ -72,8 +72,32 @@ class MashupsController extends AppController {
 		));
 	}
 	
-	public function editor()
+	public function run($id)
 	{
+		$this->Mashup->id = $id;
+		if (! $this->Mashup->exists ()) {
+			$this->flashError ('Oops');
+			return;
+		}
+		
+		$mashup = $this->Mashup->read (null, $id);
+		
+		$layoutContent = '';
+		switch ($mashup['Mashup']['layout']) {
+			case MASHUP_LAYOUT_FULLPAGE:
+				$layoutContent = 'mashupLayoutFullpage';
+				break;
+			default:
+				break;
+		}
+		
+		//TODO widgets
+		$widgets = array();
+		
+		$this->set('mashup', $mashup);
+		$this->set('widgets', $widgets);
+		$this->set('mashupContent', $layoutContent);
 	}
+	
 }
 
