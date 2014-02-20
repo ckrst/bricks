@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class MashupsController extends AppController {
 
-	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor');
+	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor', 'MashupWidget');
 	
 	public $components = array('RequestHandler');
 
@@ -80,7 +80,7 @@ class MashupsController extends AppController {
 			return;
 		}
 		
-		$mashup = $this->Mashup->read (null, $id);
+		$mashup = $this->Mashup->read(null, $id);
 		
 		$layoutContent = '';
 		switch ($mashup['Mashup']['layout']) {
@@ -91,11 +91,10 @@ class MashupsController extends AppController {
 				break;
 		}
 		
-		//TODO widgets
-		$widgets = array();
+		$mashupWidgets = $this->MashupWidget->find('all', array('conditions' => array('mashup_id' => $mashup['Mashup']['id'])));
 		
 		$this->set('mashup', $mashup);
-		$this->set('widgets', $widgets);
+		$this->set('mashupWidgets', $mashupWidgets);
 		$this->set('mashupContent', $layoutContent);
 	}
 	
