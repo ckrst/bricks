@@ -74,6 +74,9 @@ class MashupsController extends AppController {
 	
 	public function run($id)
 	{
+		
+		$this->layout = 'mashup';
+		
 		$this->Mashup->id = $id;
 		if (! $this->Mashup->exists ()) {
 			$this->flashError ('Oops');
@@ -96,6 +99,8 @@ class MashupsController extends AppController {
 		$this->set('mashup', $mashup);
 		$this->set('mashupWidgets', $mashupWidgets);
 		$this->set('mashupContent', $layoutContent);
+		
+		//$this->set('foo', 'bar');
 	}
 	
 }

@@ -1,20 +1,4 @@
 <?php
-/**
- *
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
 
 ?>
 <!DOCTYPE html>
@@ -27,8 +11,21 @@
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('bootstrap.min');
-		echo $this->Html->css('bootstrap-theme.min');
+		
+		switch (intval($mashup['Mashup']['style'])) {
+			case MASHUP_STYLE_1:
+				echo $this->Html->css('sb-admin/css/bootstrap');
+				echo $this->Html->css('sb-admin/css/sb-admin');
+				break;
+			case MASHUP_STYLE_2:
+				echo $this->Html->css('sb-admin-v2/css/bootstrap');
+				echo $this->Html->css('sb-admin-v2/css/sb-admin');
+				break;
+			default:
+				echo $this->Html->css('bootstrap.min');
+				echo $this->Html->css('bootstrap-theme.min');
+				break;
+		}
 		
 		echo $this->Html->script('jquery-2.1.0.min');
 		echo $this->Html->script('bootstrap.min');
