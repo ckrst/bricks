@@ -106,7 +106,6 @@ class WidgetsController extends AppController {
 			}
 		}
 		
-		
 		$this->set('objeto', $objeto);
 		$this->set('widget', $widget);
 		$this->set('campos', $campos);
