@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '127.9.3.2',
 		'login' => 'admin35Y9DEn',
 		'password' => ' q7rVYt9rm5QF',
 		'database' => 'brix',
