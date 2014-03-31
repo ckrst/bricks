@@ -64,10 +64,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'coisa1',
+		'host' => 'brix-vkirst.rhcloud.com',
+		'login' => 'admin35Y9DEn',
+		'password' => ' q7rVYt9rm5QF',
+		'database' => 'brix',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
