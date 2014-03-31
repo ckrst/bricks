@@ -8010,3 +8010,21 @@ Request URL: /brix/php/js/bootstrap-fileinput.js
 Stack Trace:
 #0 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-03-31 08:24:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /brix/php/js/bootstrap-datepicker.js
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-31 08:24:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /brix/php/js/bootstrap-fileinput.js
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
