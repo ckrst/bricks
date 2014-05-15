@@ -76,6 +76,7 @@ class DATABASE_CONFIG {
 		'password' => DB_PASS,
 		'database' => DB_NAME,
 		'prefix' => '',
+		
 		//'encoding' => 'utf8',
 	);
 
