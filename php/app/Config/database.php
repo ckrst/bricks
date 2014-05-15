@@ -1,4 +1,11 @@
 <?php
+
+define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
 /**
  *
  *
@@ -64,10 +71,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => '127.9.3.2',
-		'login' => 'admin35Y9DEn',
-		'password' => ' q7rVYt9rm5QF',
-		'database' => 'brix',
+		'host' => DB_HOST,
+		'login' => DB_USER,
+		'password' => DB_PASS,
+		'database' => DB_NAME,
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
