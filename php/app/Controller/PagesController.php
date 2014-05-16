@@ -73,4 +73,17 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
+	
+	/**
+	 * Landing page
+	 */
+	function landing() {
+		$this->layout = 'clean';
+	}
+	
+	/**
+	 * Login page
+	 */
+	function login() {
+	}
 }
