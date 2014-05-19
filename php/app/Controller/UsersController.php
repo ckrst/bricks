@@ -14,11 +14,6 @@ class UsersController extends AppController {
 
 	public $helpers = array('Form', 'Html');
 	
-	// Pass settings in $components array
-	public $components = array(
-		'Auth'
-	);
-	
 	public function login() {
 		
 		if ($this->request->is('post')) {
@@ -32,8 +27,6 @@ class UsersController extends AppController {
 			}
 		}
 	}
-
-	
 	
 	
 	public function register() {
@@ -63,6 +56,7 @@ class UsersController extends AppController {
 				);
 			}
 		}
+		
 	}
 	
 	public function logout() {

@@ -54,6 +54,6 @@
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 	<?php echo $this->Form->end(); ?>
 
-	<p>or <?php echo $this->Html->link('Register', '/register'); ?></p>
+	<p>or <?php echo $this->Html->link('Register', '/users/register'); ?></p>
 
     </div> <!-- /container -->

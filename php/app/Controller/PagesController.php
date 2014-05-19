@@ -81,9 +81,5 @@ class PagesController extends AppController {
 		$this->layout = 'clean';
 	}
 	
-	/**
-	 * Login page
-	 */
-	function login() {
-	}
+	
 }

@@ -1,3 +1,5 @@
+<?php die('bar');?>
+
 <style type="text/css">
 .form-signin {
   max-width: 330px;
@@ -59,6 +61,6 @@
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 	<?php echo $this->Form->end(); ?>
 
-	<p>or <?php echo $this->Html->link('Login', '/login'); ?></p>
+	<p>or <?php echo $this->Html->link('Login', '/users/login'); ?></p>
 
     </div> <!-- /container -->.
