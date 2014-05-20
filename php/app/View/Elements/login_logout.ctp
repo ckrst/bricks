@@ -1,4 +1,5 @@
 <div class="navbar-form pull-right">
+
     <?php
     if ($authUser) {
 		?>
