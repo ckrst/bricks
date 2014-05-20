@@ -14,6 +14,12 @@ class UsersController extends AppController {
 
 	public $helpers = array('Form', 'Html');
 	
+	function beforeFilter() {
+		parent::beforeFilter();
+		
+		$this->Auth->allow('register');
+	}
+	
 	public function login() {
 		
 		if ($this->request->is('post')) {

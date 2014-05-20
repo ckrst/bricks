@@ -1,4 +1,3 @@
-<?php die('bar');?>
 
 <style type="text/css">
 .form-signin {
