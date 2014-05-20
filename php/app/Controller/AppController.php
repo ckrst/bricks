@@ -39,4 +39,12 @@ class AppController extends Controller {
 			)
 	);
 	
+	public function beforeFilter() {
+		parent::beforeFilter();
+		
+		$user = $this->Auth->user();
+		//Cria variável com informações do usuário de autenticação
+		$this->set('authUser', $user);
+	}
+	
 }

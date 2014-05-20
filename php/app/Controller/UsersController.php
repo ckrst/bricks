@@ -32,7 +32,7 @@ class UsersController extends AppController {
 			$user = $this->User->find('first', array('conditions' => array('username' => $username, 'password' => md5($password))));
 			
 			if ($this->Auth->login($user['User'])) {
-				return $this->redirect('dashboard');
+				return $this->redirect('/dashboard');
 			} else {
 				$this->Session->setFlash(
 					__('Username or password is incorrect'),
@@ -61,7 +61,7 @@ class UsersController extends AppController {
 			if ($this->User->save($user)) {
 				$user['User']['id'] = $this->User->id;
 				$this->Auth->login($user['User']);
-				return $this->redirect('dashboard');
+				return $this->redirect('/dashboard');
 			} else {
 
 				$this->Session->setFlash(
@@ -71,10 +71,6 @@ class UsersController extends AppController {
 			}
 		}
 		
-	}
-	
-	function dashboard() {
-		die(var_dump($this->Auth->user('id')));
 	}
 	
 	public function logout() {
