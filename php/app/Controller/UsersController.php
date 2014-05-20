@@ -11,6 +11,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	public $uses = array('User');
+	public $components = array('Auth');
 
 	public $helpers = array('Form', 'Html');
 	
@@ -23,7 +24,14 @@ class UsersController extends AppController {
 	public function login() {
 		
 		if ($this->request->is('post')) {
-			if ($this->Auth->login()) {
+			
+			
+			$username = $this->request->data('username');
+			$password = $this->request->data('password');
+			
+			$user = $this->User->find('first', array('conditions' => array('username' => $username, 'password' => md5($password))));
+			
+			if ($this->Auth->login($user['User'])) {
 				return $this->redirect('dashboard');
 			} else {
 				$this->Session->setFlash(
@@ -63,6 +71,10 @@ class UsersController extends AppController {
 			}
 		}
 		
+	}
+	
+	function dashboard() {
+		die(var_dump($this->Auth->user('id')));
 	}
 	
 	public function logout() {

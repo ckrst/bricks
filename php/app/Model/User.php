@@ -8,6 +8,8 @@ class User extends AppModel {
 	public $useTable = 'user';
 	public $order = 'username';
 	public $displayField = 'username';
+	
+	public $components = array('Auth');
 
 	/*
 	public $validate = array(
@@ -28,10 +30,7 @@ class User extends AppModel {
 
 	public function beforeSave($options = array()) {
 		if (!empty($this->data['User']['password'])) {
-			$passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256'));
-			$this->data['User']['password'] = $passwordHasher->hash(
-				$this->data['User']['password']
-			);
+			$this->data['User']['password'] = md5($this->data['User']['password']);
 		}
 		return true;
 	}
