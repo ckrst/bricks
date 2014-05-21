@@ -1,10 +1,10 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'coisa1');
+define('DB_HOST', 	getenv('OPENSHIFT_MYSQL_DB_HOST') 		== '' ? 'localhost' 	: getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',	getenv('OPENSHIFT_MYSQL_DB_PORT'));
+define('DB_USER',	getenv('OPENSHIFT_MYSQL_DB_USERNAME') 	== '' ? 'root' 			: getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',	getenv('OPENSHIFT_MYSQL_DB_PASSWORD')) 	== '' ? '' 				: getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+define('DB_NAME',	getenv('OPENSHIFT_GEAR_NAME') 			== '' ? 'brix' 			: getenv('OPENSHIFT_GEAR_NAME'));
 
 /**
  *
@@ -69,25 +69,25 @@ define('DB_NAME', 'coisa1');
 class DATABASE_CONFIG {
 
 	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => DB_HOST,
-		'login' => DB_USER,
-		'password' => DB_PASS,
-		'database' => DB_NAME,
-		'prefix' => '',
+		'datasource' 	=> 'Database/Mysql',
+		'persistent' 	=> false,
+		'host' 			=> DB_HOST,
+		'login' 		=> DB_USER,
+		'password' 		=> DB_PASS,
+		'database' 		=> DB_NAME,
+		'prefix' 		=> '',
 		
 		//'encoding' => 'utf8',
 	);
 
 	public $test = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'coisa2',
-		'prefix' => '',
+		'datasource' 	=> 'Database/Mysql',
+		'persistent' 	=> false,
+		'host' 			=> 'localhost',
+		'login' 		=> 'root',
+		'password' 		=> '',
+		'database' 		=> 'brix',
+		'prefix' 		=> '',
 		//'encoding' => 'utf8',
 	);
 }
