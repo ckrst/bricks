@@ -19,6 +19,14 @@ class UserApp extends AppModel {
 		'Mashup' => array(
 			'className' => 'Mashup',
 			'foreignKey' => 'app_id'
+		),
+		'Objeto' => array(
+			'className' => 'Objeto',
+			'foreignKey' => 'app_id'
+		),
+		'Guest' => array(
+			'className' => 'Guest',
+			'foreignKey' => 'app_id'
 		)
 	);
 }

@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class UserappsController extends AppController {
 
-	public $uses = array('User', 'UserApp');
+	public $uses = array('User', 'UserApp', 'Guest');
 	public $components = array('Auth');
 
 	public $helpers = array('Form', 'Html');
@@ -29,6 +29,11 @@ class UserappsController extends AppController {
 	}
 	
 	public function edit($id) {
+		$userapp = $this->UserApp->findById($id);
+		$this->set('userapp', $userapp);
+	}
+
+	public function view($id) {
 		$userapp = $this->UserApp->findById($id);
 		$this->set('userapp', $userapp);
 	}

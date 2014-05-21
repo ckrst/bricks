@@ -9,4 +9,6 @@ class Objeto extends AppModel {
 	public $displayField = 'nome';
 	
 	public $hasMany = 'Campo';
+
+	public $belongsTo = 'UserApp';
 }

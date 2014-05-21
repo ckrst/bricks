@@ -30,7 +30,7 @@ class Security {
  *
  * @var string
  */
-	public static $hashType = null;
+	public static $hashType = 'md5';
 
 /**
  * Default cost
