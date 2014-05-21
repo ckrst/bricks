@@ -15,6 +15,7 @@ if (count($apps)) {
 				<td><?php echo $userApp['UserApp']['id']; ?></td>
 				<td><?php echo $userApp['UserApp']['nome']; ?></td>
 				<td>
+					<?php echo $this->Html->link('view', 'view/' . $userApp['UserApp']['id']); ?>
 					<?php echo $this->Html->link('edit', 'edit/' . $userApp['UserApp']['id']); ?>
 				</td>
 			</tr>
