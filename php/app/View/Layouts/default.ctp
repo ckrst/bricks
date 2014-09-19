@@ -70,7 +70,7 @@
 										if ($userApps) {
 											foreach ($userApps as $userAppItem) {
 												?>
-												<li><?php echo $this->Html->link($userAppItem['UserApp']['nome'], '/mashups/run/' . $userAppItem['Mashup'][0]['id']); ?></li>
+												<li><?php echo $this->Html->link($userAppItem['UserApp']['nome'], '/userapps/run/' . $userAppItem['UserApp']['id']); ?></li>
 												<?php
 											}
 										}

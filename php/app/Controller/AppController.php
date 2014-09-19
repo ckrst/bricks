@@ -31,6 +31,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+	protected $user;
+
 	public $components = array(
 			'Auth' => array(
 					'loginAction' => array('plugin' => null, 'controller' => 'users', 'action' => 'login'),
@@ -44,13 +46,13 @@ class AppController extends Controller {
 	public function beforeFilter() {
 		parent::beforeFilter();
 
-		$user = $this->Auth->user();
+		$this->user = $this->Auth->user();
 		//Cria variável com informações do usuário de autenticação
-		$this->set('authUser', $user);
+		$this->set('authUser', $this->user);
 
 		//busca apps do usuário
-		$userApps = $this->UserApp->findAllByOwnerId($user['id']);
-		$this->set('userApps', $userApps);
+		$this->userApps = $this->UserApp->findAllByOwnerId($this->user['id']);
+		$this->set('userApps', $this->userApps);
 
 	}
 

@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class UserappsController extends AppController {
 
-	public $uses = array('User', 'UserApp');
+	public $uses = array('User', 'UserApp', 'Mashup');
 	public $components = array('Auth');
 
 	public $helpers = array('Form', 'Html');
@@ -27,7 +27,16 @@ class UserappsController extends AppController {
 	public function add() {
 
 		if ($this->request->is('post')) {
-			die(var_dump($_REQUEST));
+			$this->UserApp->create();
+			$this->request->data['UserApp']['owner_id'] = $this->user['id'];
+			$this->UserApp->save($this->request->data);
+			$this->Mashup->create();
+			$this->Mashup->save(array('Mashup' => array('nome' => 'default', 'layout' => 1, 'style' => 3, 'app_id' => $this->UserApp->id)));
+
+
+
+			$this->redirect('/');
+
 		}
 
 		$this->set('userapp', array());
@@ -36,6 +45,13 @@ class UserappsController extends AppController {
 	public function edit($id) {
 		$userapp = $this->UserApp->findById($id);
 		$this->set('userapp', $userapp);
+	}
+
+	public function run($id) {
+
+		$userApp = $this->UserApp->findById($id);
+		$this->set('userApp', $userApp);
+
 	}
 
 }

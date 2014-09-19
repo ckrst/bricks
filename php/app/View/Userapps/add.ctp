@@ -2,7 +2,9 @@
 ?>
 <h3>Novo</h3>
 
-<form action="" method="POST">
-  <input name="foo">
-  <button>Mais</button>
-</form>
+
+<?php
+echo $this->Form->create('UserApp');
+echo $this->Form->input('nome');
+echo $this->Form->end('Save App');
+?>

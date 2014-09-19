@@ -12630,3 +12630,128 @@ Request URL: /brix/php/js/bootstrap-fileinput.js
 Stack Trace:
 #0 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-09-19 05:38:46 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/brix/php/app/Controller/UserappsController.php, line 33]
+2014-09-19 05:38:46 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /brix/php/userapps/add
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/opt/lampp/htdo...', 33, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/opt/lampp/htdo...', 33, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:45:13 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`brix`.`app`, CONSTRAINT `fk_app_ownner` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /brix/php/userapps/add
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /opt/lampp/htdocs/brix/php/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `br...', Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Model/Datasource/DboSource.php(1003): DboSource->execute('INSERT INTO `br...')
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Model/Model.php(1830): DboSource->create(Object(UserApp), Array, Array)
+#4 /opt/lampp/htdocs/brix/php/app/Controller/UserappsController.php(33): Model->save(Array)
+#5 [internal function]: UserappsController->add()
+#6 /opt/lampp/htdocs/brix/php/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UserappsController), Array)
+#7 /opt/lampp/htdocs/brix/php/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /opt/lampp/htdocs/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#9 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-09-19 05:51:37 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:51:37 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:51:38 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:51:38 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:52:00 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:52:00 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:52:00 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:52:00 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:54:25 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:54:25 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:54:25 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:54:25 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:54:49 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:54:49 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:54:49 Error: Fatal Error (1): Call to undefined method MashupsController::flashError() in [/opt/lampp/htdocs/brix/php/app/Controller/MashupsController.php, line 82]
+2014-09-19 05:54:49 Error: [FatalErrorException] Call to undefined method MashupsController::flashError()
+Request URL: /brix/php/mashups/run/
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/opt/lampp/htdo...', 82, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-19 05:57:18 Error: [MissingActionException] Action UserappsController::run() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserappsController',
+  'action' => 'run',
+)
+Request URL: /brix/php/userapps/run/4
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#2 /opt/lampp/htdocs/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-09-19 06:06:59 Error: Fatal Error (1): Call to a member function create() on a non-object in [/opt/lampp/htdocs/brix/php/app/Controller/UserappsController.php, line 33]
+2014-09-19 06:06:59 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /brix/php/userapps/add
+Stack Trace:
+#0 /opt/lampp/htdocs/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/opt/lampp/htdo...', 33)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/opt/lampp/htdo...', 33, Array)
+#2 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/opt/lampp/htdo...', 33, Array)
+#3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
