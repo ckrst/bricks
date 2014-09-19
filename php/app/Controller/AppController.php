@@ -30,7 +30,7 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	
+
 	public $components = array(
 			'Auth' => array(
 					'loginAction' => array('plugin' => null, 'controller' => 'users', 'action' => 'login'),
@@ -38,13 +38,20 @@ class AppController extends Controller {
 					'logoutRedirect' => array('plugin' => null, 'controller' => 'pages', 'action' => 'default')
 			)
 	);
-	
+
+	public $uses = array('UserApp');
+
 	public function beforeFilter() {
 		parent::beforeFilter();
-		
+
 		$user = $this->Auth->user();
 		//Cria variável com informações do usuário de autenticação
 		$this->set('authUser', $user);
+
+		//busca apps do usuário
+		$userApps = $this->UserApp->findAllByOwnerId($user['id']);
+		$this->set('userApps', $userApps);
+
 	}
-	
+
 }
