@@ -4,7 +4,7 @@
 
 <?php echo $this->Html->link('New app', 'add', array('class' => 'button')); ?>
 
-<?php 
+<?php
 if (count($apps)) {
 	?>
 	<table class="table">
@@ -16,12 +16,13 @@ if (count($apps)) {
 				<td><?php echo $userApp['UserApp']['nome']; ?></td>
 				<td>
 					<?php echo $this->Html->link('edit', 'edit/' . $userApp['UserApp']['id']); ?>
+					<?php echo $this->Html->link('view', 'view/' . $userApp['UserApp']['id']); ?>
 				</td>
 			</tr>
-			<?php 
+			<?php
 		}
 		?>
 	</table>
-	<?php 
+	<?php
 }
 ?>

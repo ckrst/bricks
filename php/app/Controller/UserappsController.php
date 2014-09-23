@@ -54,4 +54,9 @@ class UserappsController extends AppController {
 
 	}
 
+	public function view($id) {
+		$userApp = $this->UserApp->findById($id);
+		$this->set('userApp', $userApp);
+	}
+
 }
