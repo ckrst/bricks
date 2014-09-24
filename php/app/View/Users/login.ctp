@@ -41,7 +41,7 @@
 
 
 	<?php echo $this->Form->create(false, array('class' => 'form-signin')); ?>
-		<h2 class="form-signin-heading">Please sign in</h2>
+		<h2 class="form-signin-heading">Please sign in 123</h2>
 
 		<?php echo $this->Session->flash('flash_error'); ?>
 
