@@ -91,7 +91,7 @@
 				</div>
 			</nav>
 		</div>
-		<div id="content">
+		<div id="content" class="container">
 
 			<?php echo $this->Session->flash(); ?>
 

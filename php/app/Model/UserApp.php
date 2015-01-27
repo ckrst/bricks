@@ -9,7 +9,7 @@ class UserApp extends AppModel {
 	public $displayField = 'nome';
 	
 	public $belongsTo = array(
-		'User' => array(
+		'Owner' => array(
 			'className' => 'User',
 			'foreignKey' => 'owner_id'
 		)
@@ -18,6 +18,10 @@ class UserApp extends AppModel {
 	public $hasMany = array(
 		'Mashup' => array(
 			'className' => 'Mashup',
+			'foreignKey' => 'app_id'
+		),
+		'AppObjects' => array(
+			'className' => 'Objeto',
 			'foreignKey' => 'app_id'
 		)
 	);

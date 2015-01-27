@@ -12755,3 +12755,169 @@ Stack Trace:
 #3 /opt/lampp/htdocs/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-01-27 04:14:05 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'brix\'',
+  'enabled' => true,
+)
+Request URL: /brix/php/
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(3471): ConnectionManager::getDataSource('default')
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(3493): Model->setSource('app')
+#5 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(800): Model->getDataSource()
+#6 /home/vinicius/desenv/projects/brix/php/app/Controller/AppController.php(54): Model->__call('findAllByOwnerI...', Array)
+#7 /home/vinicius/desenv/projects/brix/php/app/Controller/AppController.php(54): UserApp->findAllByOwnerId(NULL)
+#8 /home/vinicius/desenv/projects/brix/php/app/Controller/DashboardController.php(19): AppController->beforeFilter()
+#9 [internal function]: DashboardController->beforeFilter(Object(CakeEvent))
+#10 /home/vinicius/desenv/projects/brix/php/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#11 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#13 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(DashboardController), Object(CakeRequest), Object(CakeResponse))
+#14 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-01-27 04:17:24 Error: [MissingTableException] Table app for model UserApp was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'app',
+  'class' => 'UserApp',
+  'ds' => 'default',
+)
+Request URL: /brix/php/
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(3493): Model->setSource('app')
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Model/Model.php(800): Model->getDataSource()
+#2 /home/vinicius/desenv/projects/brix/php/app/Controller/AppController.php(54): Model->__call('findAllByOwnerI...', Array)
+#3 /home/vinicius/desenv/projects/brix/php/app/Controller/AppController.php(54): UserApp->findAllByOwnerId(NULL)
+#4 /home/vinicius/desenv/projects/brix/php/app/Controller/DashboardController.php(19): AppController->beforeFilter()
+#5 [internal function]: DashboardController->beforeFilter(Object(CakeEvent))
+#6 /home/vinicius/desenv/projects/brix/php/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#7 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#8 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#9 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(DashboardController), Object(CakeRequest), Object(CakeResponse))
+#10 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-27 04:41:23 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home/vinicius/desenv/projects/brix/php/app/Model/UserApp.php, line 26]
+2015-01-27 04:41:23 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /brix/php/userapps/view/1
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/vinicius/...', 26)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/vinicius/...', 26, Array)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/vinicius/...', 26, Array)
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-27 04:41:24 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home/vinicius/desenv/projects/brix/php/app/Model/UserApp.php, line 26]
+2015-01-27 04:41:24 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /brix/php/userapps/view/1
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/vinicius/...', 26)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/vinicius/...', 26, Array)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/vinicius/...', 26, Array)
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-27 05:35:24 Error: [MissingViewException] View file "/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp',
+)
+Request URL: /brix/php/objetos/add
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ObjetosController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-27 05:38:26 Error: [MissingViewException] View file "/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp',
+)
+Request URL: /brix/php/objetos/add
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ObjetosController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-27 05:38:42 Error: [MissingViewException] View file "/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/vinicius/desenv/projects/brix/php/app/View/Objetos/add.ctp',
+)
+Request URL: /brix/php/objetos/add
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ObjetosController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-27 05:42:56 Error: [MissingActionException] Action UserappsController::userapps() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserappsController',
+  'action' => 'userapps',
+)
+Request URL: /brix/php/userapps/userapps/add
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-27 05:47:06 Error: [MissingActionException] Action UserappsController::addObjeto() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserappsController',
+  'action' => 'addObjeto',
+)
+Request URL: /brix/php/userapps/addObjeto
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-27 05:54:38 Error: [MissingViewException] View file "/home/vinicius/desenv/projects/brix/php/app/View/Userapps/add_objeto.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/vinicius/desenv/projects/brix/php/app/View/Userapps/add_objeto.ctp',
+)
+Request URL: /brix/php/userapps/addObjeto
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-27 05:55:23 Error: [MissingViewException] View file "/home/vinicius/desenv/projects/brix/php/app/View/Userapps/add_objeto.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/vinicius/desenv/projects/brix/php/app/View/Userapps/add_objeto.ctp',
+)
+Request URL: /brix/php/userapps/addObjeto
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /home/vinicius/desenv/projects/brix/php/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UserappsController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/vinicius/desenv/projects/brix/php/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-27 06:01:51 Error: Fatal Error (1): Call to a member function save() on a non-object in [/home/vinicius/desenv/projects/brix/php/app/Controller/UserappsController.php, line 68]
+2015-01-27 06:01:51 Error: [FatalErrorException] Call to a member function save() on a non-object
+Request URL: /brix/php/userapps/addObjeto
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/vinicius/...', 68)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/vinicius/...', 68, Array)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/vinicius/...', 68, Array)
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-27 06:02:11 Error: Fatal Error (1): Call to a member function setFlash() on a non-object in [/home/vinicius/desenv/projects/brix/php/app/Controller/UserappsController.php, line 70]
+2015-01-27 06:02:11 Error: [FatalErrorException] Call to a member function setFlash() on a non-object
+Request URL: /brix/php/userapps/addObjeto
+Stack Trace:
+#0 /home/vinicius/desenv/projects/brix/php/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/vinicius/...', 70)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/vinicius/...', 70, Array)
+#2 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/vinicius/...', 70, Array)
+#3 /home/vinicius/desenv/projects/brix/php/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

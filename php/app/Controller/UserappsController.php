@@ -10,8 +10,8 @@ App::uses('AppController', 'Controller');
 
 class UserappsController extends AppController {
 
-	public $uses = array('User', 'UserApp', 'Mashup');
-	public $components = array('Auth');
+	public $uses = array('User', 'UserApp', 'Mashup', 'Objeto');
+	public $components = array('Auth', 'Session');
 
 	public $helpers = array('Form', 'Html');
 
@@ -57,6 +57,21 @@ class UserappsController extends AppController {
 	public function view($id) {
 		$userApp = $this->UserApp->findById($id);
 		$this->set('userApp', $userApp);
+	}
+
+	public function addObjeto() {
+		if ($this->request->is('post')) {
+
+			$userApp = $this->UserApp->findById($this->request->data['Objeto']['app_id']);
+
+			if ($this->Objeto->save($this->request->data)) {
+	            // Set a session flash message and redirect.
+    	        $this->Session->setFlash('Object Saved!');
+        	    return $this->redirect('/userapps/view/' . $userapp['UserApp']['id']);
+        	}
+
+        	debug($this->Objeto->validationErrors);
+		}
 	}
 
 }
