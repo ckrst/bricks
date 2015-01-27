@@ -5,6 +5,7 @@
  */
 define('CAMPO_TIPO_TEXTO_LIVRE', 	1);
 define('CAMPO_TIPO_NUMERO_INTEIRO', 2);
+define('CAMPO_TIPO_STRING', 		3);
 
 /*
  * TIPOS DE WIDGETS

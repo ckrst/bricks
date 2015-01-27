@@ -8,7 +8,12 @@ class Objeto extends AppModel {
 	public $order = 'nome';
 	public $displayField = 'nome';
 	
-	public $hasMany = 'Campo';
+	public $hasMany = array(
+        'Campo' => array(
+            'className' => 'Campo',
+            'order' => 'Campo.ordem'
+        )
+    );
 
-	public $belongsTo = 'UserApp';
+	//public $belongsTo = 'UserApp';
 }

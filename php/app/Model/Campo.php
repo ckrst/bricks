@@ -10,5 +10,9 @@ class Campo extends AppModel {
 	
 	public $belongsTo = 'Objeto';
 	public $hasMany = 'Valor';
+
+	public function nextOrder($objectId){
+		return $this->query("SELECT id, ordem FROM campo WHERE objeto_id=" . $objectId . " ORDER BY ordem DESC");
+	}
 	
 }
