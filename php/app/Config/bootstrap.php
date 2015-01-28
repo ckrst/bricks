@@ -106,5 +106,6 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+CakePlugin::loadAll(array('Api' => array('routes' => true)));
 
 require_once 'constants.php';
