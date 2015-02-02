@@ -6,9 +6,9 @@
 * @author Vinícius Kirst <vinicius@versul.com.br>
 */
 
-App::uses('AppController', 'Controller');
+App::uses('ApiAppController', 'Controller');
 
-class ObjsController extends AppController {
+class ObjsController extends ApiAppController {
 
 	public $uses = array('Mashup', 'Widget', 'Objeto','Campo', 'Chave', 'Valor', 'MashupWidget');
 
@@ -40,6 +40,7 @@ class ObjsController extends AppController {
 	}
 
 	public function view($id) {
+        
 		$objeto = $this->Objeto->findById($id);
 
 		$data[$objeto['Objeto']['nome']] = array();
@@ -77,7 +78,17 @@ class ObjsController extends AppController {
         ));
 	}
 
-	public function edit($id) {
+	public function edit($id, $chaveId = null) {
+        $this->RequestHandler->addInputType('json', array('json_decode', true));
+        die(var_dump($this->request->data));
+
+		$objeto = $this->Objeto->findById($id);
+
+		if (null !== $chaveId) {
+			$chave = $this->Chave->findById($chaveId);
+
+		}
+
 		$this->Mashup->id = $id;
 		if ($this->Mashup->save($this->request->data)) {
 			$message = 'Saved';
