@@ -6,7 +6,7 @@
 * @author Vinícius Kirst <vinicius@versul.com.br>
 */
 
-App::uses('ApiAppController', 'Controller');
+App::uses('ApiAppController', 'Api.Controller');
 
 class ObjsController extends ApiAppController {
 
