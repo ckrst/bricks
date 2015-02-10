@@ -60,9 +60,10 @@
 						if ($authUser) {
 							?>
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="<?php echo $this->html->url('/dashboard'); ?>"><span class="glyphicon glyphicon-dashboard"></span></a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">My stuff <b class="caret"></b></a>
+								<li class="<?php echo $menu == 'dashboard' ? 'active' : ''; ?>"><a href="<?php echo $this->html->url('/dashboard'); ?>"><span class="glyphicon glyphicon-dashboard"></span></a></li>
+								<li class="dropdown <?php echo $menu == 'apps' ? 'active' : ''; ?>">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-cloud"></span> <b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><?php echo $this->Html->link('My apps', '/userapps'); ?></li>
 

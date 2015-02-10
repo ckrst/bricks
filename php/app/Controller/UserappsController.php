@@ -10,13 +10,15 @@ App::uses('AppController', 'Controller');
 
 class UserappsController extends AppController {
 
-	public $uses = array('User', 'UserApp', 'Mashup', 'Objeto', 'Campo');
+	public $uses = array('User', 'UserApp', 'Mashup', 'Objeto', 'Campo', 'Widget');
 	public $components = array('Auth', 'Session');
 
 	public $helpers = array('Form', 'Html');
 
 	function beforeFilter() {
 		parent::beforeFilter();
+
+		$this->set('menu', 'apps');
 	}
 
 	public function index() {
@@ -58,9 +60,11 @@ class UserappsController extends AppController {
 		$userApp = $this->UserApp->findById($id);
 
 		$objetos = $this->Objeto->find('all', array('conditions' => array('app_id' => $id), 'order' => 'nome'));
+		$widgets = $this->Widget->find('all', array('conditions' => array('Objeto.app_id' => $id), 'order' => 'Widget.nome'));
 
 		$this->set('userApp', $userApp);
 		$this->set('objetos', $objetos);
+		$this->set('widgets', $widgets);
 	}
 
 	public function addObjeto() {
@@ -98,6 +102,24 @@ class UserappsController extends AppController {
         	}
 
         	debug($this->Campo->validationErrors);
+		}
+	}
+
+	public function addWidget() {
+		if ($this->request->is('post')) {
+			$objeto = $this->Objeto->findById($this->request->data['Widget']['objeto_id']);
+			$userApp = $this->UserApp->findById($objeto['Objeto']['app_id']);
+
+			//TODO validate app
+
+			if ($this->Widget->save($this->request->data)) {
+	            // Set a session flash message and redirect.
+    	        $this->Session->setFlash('Widget Saved!');
+        	    return $this->redirect('/userapps/view/' . $userApp['UserApp']['id']);
+        	}
+
+        	debug($this->Widget->validationErrors);
+
 		}
 	}
 

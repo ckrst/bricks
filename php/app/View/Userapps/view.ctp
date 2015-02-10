@@ -154,11 +154,86 @@
     <div class="container">
       <h2>Widgets</h2>
       <div>
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newWidgetModal">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#newWidgetModal">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
+
+      <?php
+      if (count($widgets)) {
+        ?>
+        <div class="row">
+        <br>
+        <?php
+        foreach ($widgets as $widgetItem) {
+          ?>
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $widgetItem['Widget']['nome']; ?></h3>
+              </div>
+              <div class="panel-body">
+                
+              </div>
+
+              <div class="panel-footer">
+                
+              </div>
+
+            </div>
+          </div>
+          <?php
+        }
+        ?>
+        </div>
+        <?php
+      }
+      ?>
     </div>
+
+    <div id="newWidgetModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="newWidgetModalLabel">New Widget</h4>
+          </div>
+          <?php echo $this->Form->create('Widget', array('url' => 'addWidget')); ?>
+          
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="txtWidgetName">Widget name</label>
+              <input type="text" class="form-control" id="txtWidgetName" placeholder="Enter widget name" name="data[Widget][nome]">
+            </div>
+            <div class="form-group">
+              <label for="txtWidgetType">Type</label>
+              <select class="form-control" id="selWidgetType" name="data[Widget][tipo]">
+                <option value="<?php echo WIDGET_TIPO_TABELA; ?>">Table</option>
+                <option value="<?php echo WIDGET_TIPO_BUTTON_POPUP_INSERTER; ?>">Form</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="txtWidgetObject">Object</label>
+              <select class="form-control" id="selWidgetObject" name="data[Widget][objeto_id]">
+                <?php
+                foreach ($objetos as $objectItem) {
+                  ?>
+                  <option value="<?php echo $objectItem['Objeto']['id']; ?>"><?php echo $objectItem['Objeto']['nome']; ?></option>
+                  <?php
+                }
+                ?>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
   <div class="tab-pane" id="divAppUsers">
     <div class="container">
