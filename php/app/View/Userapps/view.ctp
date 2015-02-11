@@ -10,6 +10,7 @@
   <ul class="nav nav-tabs" role="tablist">
     <li class="active TABS"><a href="#divObjetos">Objects</a></li>
     <li class="TABS"><a href="#divWidgets">Widgets</a></li>
+    <li class="TABS"><a href="#divMashups">Mashups</a></li>
     <li class="TABS"><a href="#divAppUsers">Users</a></li>
   </ul>
 </div>
@@ -37,13 +38,15 @@
                 <h3 class="panel-title"><?php echo $objectItem['Objeto']['nome']; ?></h3>
               </div>
               <div class="panel-body">
-                <span class="glyphicon glyphicon-cloud"></span>
-                <?php
-                echo $this->Html->link( 
-                  $this->Html->url('/api/objs/' . $objectItem['Objeto']['id'] . '.json', true),
-                  '/api/objs/' . $objectItem['Objeto']['id'] . '.json'
-                );
-                ?>
+                <div class="well">
+                  <span class="glyphicon glyphicon-cloud"></span>
+                  <?php
+                  echo $this->Html->link( 
+                    $this->Html->url('/api/objs/' . $objectItem['Objeto']['id'] . '.json', true),
+                    '/api/objs/' . $objectItem['Objeto']['id'] . '.json'
+                  );
+                  ?>
+                </div>
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
@@ -132,11 +135,30 @@
               <input type="text" class="form-control" id="txtFieldName" placeholder="Enter object name" name="data[Campo][nome]">
             </div>
             <div class="form-group">
-              <label for="txtFieldType">Type</label>
+              <label for="selFieldType">Type</label>
               <select class="form-control" id="selFieldType" name="data[Campo][tipo]">
                 <option value="<?php echo CAMPO_TIPO_NUMERO_INTEIRO; ?>">Number</option>
                 <option value="<?php echo CAMPO_TIPO_STRING; ?>">String</option>
                 <option value="<?php echo CAMPO_TIPO_TEXTO_LIVRE; ?>">Text</option>
+                <option value="<?php echo CAMPO_TIPO_DATA; ?>">Date</option>
+                <option value="<?php echo CAMPO_TIPO_URL; ?>">URL</option>
+                <option value="<?php echo CAMPO_TIPO_EMAIL; ?>">Email</option>
+                <option value="<?php echo CAMPO_TIPO_OBJETO; ?>">Object</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="selFieldObject">References</label>
+              <select class="form-control" id="selFieldType" name="data[Campo][objeto_id_xref]">
+                <option value=""></option>
+                <?php
+                if (count($objetos)) {
+                  foreach ($objetos as $objectItem) {
+                    ?>
+                    <option value="<?php echo $objectItem['Objeto']['id']; ?>"><?php echo $objectItem['Objeto']['nome']; ?></option>
+                    <?php
+                  }
+                }
+                ?>
               </select>
             </div>
           </div>
@@ -173,7 +195,9 @@
                 <h3 class="panel-title"><?php echo $widgetItem['Widget']['nome']; ?></h3>
               </div>
               <div class="panel-body">
-                
+                <div class="well">
+                  <?php echo $this->Html->link('Run', '/widgets/run/' . $widgetItem['Widget']['id']); ?>
+                </div>
               </div>
 
               <div class="panel-footer">
@@ -239,12 +263,61 @@
     <div class="container">
       <h2>Users</h2>
       <div>
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newUserModal">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#newUserModal">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
+
+      <?php
+      if (count($appUsers)) {
+        ?>
+        <div class="row">
+        
+        <table class="table">
+        <?php
+        foreach ($appUsers as $appUserItem) {
+          ?>
+          <tr>
+            <td>
+              <p><?php echo $appUserItem['User']['username']; ?></p>
+            </td>
+            <td>
+              <small><?php echo $appUserItem['User']['email']; ?></small>
+            </td>
+          </tr>
+          <?php
+        }
+        ?>
+        </table>
+        </div>
+        <?php
+      }
+      ?>
+      </div>
+    </div>
+    <div class="tab-pane active" id="divMashups"> 
+      <div class="container">
+        <h2>Mashups</h2>
+
+        <table class="table">
+          <?php
+          foreach ($mashups as $mashupItem) {
+            ?>
+            <tr>
+              <td><?php echo $mashupItem['Mashup']['nome']; ?></td>
+              <td>
+                <?php echo $this->Html->link('Run', '/mashups/run/' . $mashupItem['Mashup']['id']); ?>
+                <?php echo $this->Html->link('Editor', '/mashups/editor/' . $mashupItem['Mashup']['id']); ?>
+              </td>
+            </tr>
+            <?php
+          }
+          ?>
+        </table>
+      </div>
     </div>
   </div>
+
 </div>
 
 <script>

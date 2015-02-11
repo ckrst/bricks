@@ -61,10 +61,15 @@ class UserappsController extends AppController {
 
 		$objetos = $this->Objeto->find('all', array('conditions' => array('app_id' => $id), 'order' => 'nome'));
 		$widgets = $this->Widget->find('all', array('conditions' => array('Objeto.app_id' => $id), 'order' => 'Widget.nome'));
+		$users = $this->User->find('all');
+		$mashups = $this->Mashup->find('all', array('conditions' => array('app_id' => $id)));
 
 		$this->set('userApp', $userApp);
 		$this->set('objetos', $objetos);
 		$this->set('widgets', $widgets);
+		$this->set('appUsers', $users);
+		$this->set('mashups', $mashups);
+
 	}
 
 	public function addObjeto() {
@@ -76,9 +81,11 @@ class UserappsController extends AppController {
 
 			if ($this->Objeto->save($this->request->data)) {
 	            // Set a session flash message and redirect.
-    	        $this->Session->setFlash('Object Saved!');
+    	        $this->Session->setFlash('Object Saved!', 'flash_success');
         	    return $this->redirect('/userapps/view/' . $userApp['UserApp']['id']);
         	}
+
+        	$this->Session->setFlash('Ops!', 'flash_error');
 
         	debug($this->Objeto->validationErrors);
 		}
@@ -97,9 +104,11 @@ class UserappsController extends AppController {
 
 			if ($this->Campo->save($this->request->data)) {
 	            // Set a session flash message and redirect.
-    	        $this->Session->setFlash('Field Saved!');
+    	        $this->Session->setFlash('Field Saved!', 'flash_success');
         	    return $this->redirect('/userapps/view/' . $objeto['Objeto']['app_id']);
         	}
+
+        	$this->Session->setFlash('Ops!', 'flash_error');
 
         	debug($this->Campo->validationErrors);
 		}
@@ -114,9 +123,11 @@ class UserappsController extends AppController {
 
 			if ($this->Widget->save($this->request->data)) {
 	            // Set a session flash message and redirect.
-    	        $this->Session->setFlash('Widget Saved!');
+    	        $this->Session->setFlash('Widget Saved!', 'flash_success');
         	    return $this->redirect('/userapps/view/' . $userApp['UserApp']['id']);
         	}
+
+        	$this->Session->setFlash('Ops!', 'flash_error');
 
         	debug($this->Widget->validationErrors);
 

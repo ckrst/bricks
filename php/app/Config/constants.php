@@ -6,6 +6,10 @@
 define('CAMPO_TIPO_TEXTO_LIVRE', 	1);
 define('CAMPO_TIPO_NUMERO_INTEIRO', 2);
 define('CAMPO_TIPO_STRING', 		3);
+define('CAMPO_TIPO_OBJETO', 		4);
+define('CAMPO_TIPO_DATA', 			5);
+define('CAMPO_TIPO_URL', 			6);
+define('CAMPO_TIPO_EMAIL', 			7);
 
 /*
  * TIPOS DE WIDGETS

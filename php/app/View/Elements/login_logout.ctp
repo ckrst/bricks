@@ -4,7 +4,7 @@
     if ($authUser) {
 		?>
         <a href="<?php echo $this->Html->url('/users/logout'); ?>" class="btn btn-danger hidden-lg hidden-md" id="logout-button-mobile"><span class="glyphicon glyphicon-off"></span> <?php echo __(''); ?></a>
-        <a href="<?php echo $this->Html->url('/users/logout'); ?>" class="btn btn-danger hidden-xs hidden-sm" id="logout-button"><i class="icon-off"></i> <?php echo __('Log out'); ?></a>
+        <a href="<?php echo $this->Html->url('/users/logout'); ?>" class="btn btn-danger hidden-xs hidden-sm" id="logout-button"><i class="glyphicon glyphicon-off"></i> <?php echo __(''); ?></a>
     	<?php
     } else {
 		?>
