@@ -259,6 +259,29 @@
     </div>
 
   </div>
+
+  <div class="tab-pane" id="divMashups"> 
+      <div class="container">
+        <h2>Mashups</h2>
+
+        <table class="table">
+          <?php
+          foreach ($mashups as $mashupItem) {
+            ?>
+            <tr>
+              <td><?php echo $mashupItem['Mashup']['nome']; ?></td>
+              <td>
+                <?php echo $this->Html->link('Run', '/mashups/run/' . $mashupItem['Mashup']['id']); ?>
+                <?php echo $this->Html->link('Editor', '/mashups/editor/' . $mashupItem['Mashup']['id']); ?>
+              </td>
+            </tr>
+            <?php
+          }
+          ?>
+        </table>
+      </div>
+    </div>
+
   <div class="tab-pane" id="divAppUsers">
     <div class="container">
       <h2>Users</h2>
@@ -295,27 +318,8 @@
       ?>
       </div>
     </div>
-    <div class="tab-pane active" id="divMashups"> 
-      <div class="container">
-        <h2>Mashups</h2>
 
-        <table class="table">
-          <?php
-          foreach ($mashups as $mashupItem) {
-            ?>
-            <tr>
-              <td><?php echo $mashupItem['Mashup']['nome']; ?></td>
-              <td>
-                <?php echo $this->Html->link('Run', '/mashups/run/' . $mashupItem['Mashup']['id']); ?>
-                <?php echo $this->Html->link('Editor', '/mashups/editor/' . $mashupItem['Mashup']['id']); ?>
-              </td>
-            </tr>
-            <?php
-          }
-          ?>
-        </table>
-      </div>
-    </div>
+    
   </div>
 
 </div>
