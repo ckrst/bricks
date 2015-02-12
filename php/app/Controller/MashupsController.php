@@ -10,9 +10,9 @@ App::uses('AppController', 'Controller');
 
 class MashupsController extends AppController {
 
-	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor', 'MashupWidget');
+	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor', 'MashupWidget', 'Userapp');
 
-	public $components = array('RequestHandler');
+	public $components = array('RequestHandler', 'Session');
 
 	/**
 	 * Exibe uma lista de mashups
@@ -96,11 +96,54 @@ class MashupsController extends AppController {
 
 		$mashupWidgets = $this->MashupWidget->find('all', array('conditions' => array('mashup_id' => $mashup['Mashup']['id'])));
 
+		$objetos = array();
+		$chaves = array();
+		foreach ($mashupWidgets as $mashupWidget) {
+			$objeto = $this->Widget->getObjeto($mashupWidget);
+			$objChaves = $this->Chave->findByObjetoId($objeto['Objeto']['id']);
+			array_push($objetos, $objeto);
+			array_push($chaves, $objChaves);
+		}
+
 		$this->set('mashup', $mashup);
+		$this->set('objetos', $objetos);
+		$this->set('chaves', $chaves);
 		$this->set('mashupWidgets', $mashupWidgets);
 		$this->set('mashupContent', $layoutContent);
 
 		//$this->set('foo', 'bar');
+	}
+
+	public function editor($id) {
+		$mashup = $this->Mashup->read(null, $id);
+		$userapp = $this->Userapp->read(null, $mashup['Mashup']['app_id']);
+		$widgets = $this->Widget->find('all', array('conditions' => array('Objeto.app_id' => $userapp['Userapp']['id'])));
+
+		if ($this->request->is('post')) {
+			//die(var_dump($this->request->data));
+			if ($this->Mashup->save($this->request->data)) {
+				$this->MashupWidget->deleteAll(array('mashup_id' => $this->Mashup->id));
+				foreach ($this->request->data['MashupWidget'] as $index => $itemMashupWidget) {
+					$mashupWidget = array(
+						'MashupWidget' => array(
+							'widget_id' => $itemMashupWidget['widget_id'],
+							'mashup_id' => $this->Mashup->id,
+							'zona' => $index,
+							'ordem' => 1
+						)
+					);
+					$this->MashupWidget->create();
+					$this->MashupWidget->save($mashupWidget);
+				}
+
+				$this->Session->setFlash('Mashup saved', 'flash_success');
+				$mashup = $this->Mashup->read(null, $id);
+			}
+		}
+
+		$this->set('mashup', $mashup);
+		$this->set('userapp', $userapp);
+		$this->set('widgets', $widgets);
 	}
 
 }

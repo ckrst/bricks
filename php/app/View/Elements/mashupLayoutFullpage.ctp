@@ -14,5 +14,5 @@ foreach ($mashupWidgets as $mashupWidget) {
 			break;
 	}
 	
-	echo $this->element($widgetContent, array('widget' => $mashupWidget));
+	echo $this->element($widgetContent, array('widget' => $mashupWidget, 'campos' => $campos, 'chaves' => $chaves));
 }
