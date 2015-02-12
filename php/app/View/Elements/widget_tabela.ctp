@@ -1,8 +1,12 @@
+<?php
+//var_dump($campos);
+?>
 <table class="table">
 	<thead>
 		<tr>
 			<?php 
 			foreach ($campos as $campo) {
+				var_dump($campo);
 				?>
 				<th><?php echo $campo['Campo']['nome']; ?></th>
 				<?php 

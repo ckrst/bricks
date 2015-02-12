@@ -7,7 +7,7 @@
 
 	<div class="panel-body">
 		
-		<?php echo $this->element($mashupContent); ?>
+		<?php echo $this->element($mashupContent, array('campos' => $objetos[0], 'chaves' => $chaves[0])); ?>
 	
 	</div>
 </div>

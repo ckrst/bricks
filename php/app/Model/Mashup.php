@@ -12,4 +12,14 @@ class Mashup extends AppModel {
 			'foreignKey' => 'app_id'
 		)
 	);
+
+	public $hasAndBelongsToMany = array(
+        'Widget' =>
+            array(
+                'className' => 'Widget',
+                'joinTable' => 'mashup_widget_xref',
+                'foreignKey' => 'mashup_id',
+                'associationForeignKey' => 'widget_id'
+            )
+    );
 }
