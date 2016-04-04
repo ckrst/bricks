@@ -21,8 +21,8 @@ matrix:
 
 before_script:
   - sh -c "composer global require 'phpunit/phpunit=3.7.33'"
-  - sh -c "mkdir ~/build/vinik/bricks/vendor"
-  - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ~/build/vinik/bricks/vendor/PHPUnit"
+  - sh -c "mkdir ~/build/vinik/bricks/php/vendor"
+  - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ~/build/vinik/bricks/php/vendor/PHPUnit"
   - sudo locale-gen pt_BR
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test2;'; fi"
@@ -119,8 +119,8 @@ before_script:
     }
     }" > app/Config/database.php
 script:
-  - sh -c "if [ '$PHPCS' != '1' ]; then ./lib/Cake/Console/cake test app Controller/TeamsController --stderr; fi"
-  - sh -c "if [ '$PHPCS' != '1' ]; then ./lib/Cake/Console/cake test app Model/Team --stderr; fi"
+  - sh -c "if [ '$PHPCS' != '1' ]; then ./php/lib/Cake/Console/cake test app Controller/TeamsController --stderr; fi"
+  - sh -c "if [ '$PHPCS' != '1' ]; then ./php/lib/Cake/Console/cake test app Model/Team --stderr; fi"
   - sh -c "if [ '$PHPCS' = '1' ]; then ~/.composer/vendor/bin/phpcs -p --extensions=php --standard=CakePHP ./lib/Cake; fi;"
 
 notifications:
