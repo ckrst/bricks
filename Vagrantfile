@@ -40,13 +40,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         web.vm.provider "docker" do |docker|
             docker.name = "brix_web"
             docker.build_dir = "."
-            # docker.cmd = ["apachectl", "-D", "FOREGROUND"]
+            # docker.cmd = ["apache2ctl", "-D", "FOREGROUND"]
             # docker.image = "php:5.6-apache"
-            docker.ports = [ "80:80" ]
+            docker.ports = [ "8090:80" ]
             docker.privileged = true
             docker.link 'brix_db:brix_db'
             docker.volumes = [
-            #    CURRENT_DIR + "/php:/var/www/html",
+                CURRENT_DIR + "/php:/var/www/html"
+                # CURRENT_DIR + "/vagrant/web:/etc/apache2/sites_enabled"
             #    CURRENT_DIR + "/php/vendor/phpunit/phpunit/PHPUnit:/var/www/html/vendors/PHPUnit",
                 # CURRENT_DIR + "/vagrant.php.ini:/etc/php5/apache2/php.ini",
             #    "/tmp" + ":/var/www/html/app/tmp"
@@ -56,7 +57,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 'OPENSHIFT_MYSQL_DB_PORT' => 3306,
                 'OPENSHIFT_MYSQL_DB_USERNAME' => 'root',
                 'OPENSHIFT_MYSQL_DB_PASSWORD' => 'changeme',
-                'OPENSHIFT_GEAR_NAME' => 'brix'
+                'OPENSHIFT_GEAR_NAME' => 'brix',
+                'APACHE_LOG_DIR' => '/var/log/apache2'
 
             }
         end
