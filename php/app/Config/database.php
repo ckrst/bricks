@@ -76,17 +76,17 @@ class DATABASE_CONFIG {
 		'password' 		=> DB_PASS,
 		'database' 		=> DB_NAME,
 		'prefix' 		=> '',
-		
+
 		//'encoding' => 'utf8',
 	);
 
 	public $test = array(
 		'datasource' 	=> 'Database/Mysql',
 		'persistent' 	=> false,
-		'host' 			=> 'localhost',
-		'login' 		=> 'root',
-		'password' 		=> '',
-		'database' 		=> 'brix',
+		'host' 			=> DB_HOST,
+		'login' 		=> DB_USER,
+		'password' 		=> DB_PASS,
+		'database' 		=> 'test_brix',
 		'prefix' 		=> '',
 		//'encoding' => 'utf8',
 	);

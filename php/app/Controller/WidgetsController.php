@@ -2,7 +2,7 @@
 
 /**
  * Arquivo WidgetController.php
- * 
+ *
  * @author Vinícius Kirst <vinicius.kirst@gmail.com>
  */
 
@@ -22,7 +22,9 @@ class WidgetsController extends AppController {
 		$objeto_id = $this->request->query ('objeto_id');
 		if ($objeto_id) {
 			$widgets = $this->Widget->find ('all', array('conditions' => array('objeto_id' => $objeto_id ) ));
-			
+
+			//echo "<PRE>";die(var_dump($widgets));
+
 			$this->set (array('widgets' => $widgets,'_serialize' => array('widgets' ) ));
 		} else {
 			throw new BadRequestException ('objeto');
@@ -80,10 +82,10 @@ class WidgetsController extends AppController {
 			return;
 		}
 		$widget = $this->Widget->read (null, $id);
-		
+
 		$this->Objeto->id = $widget['Objeto']['id'];
 		$objeto = $this->Objeto->read (null, $widget['Objeto']['id']);
-		
+
 		switch (intval($widget['Widget']['tipo'])) {
 			case WIDGET_TIPO_TABELA:
 				$widgetContent = 'widget_tabela';
@@ -94,18 +96,18 @@ class WidgetsController extends AppController {
 			default:
 				break;
 		}
-		
+
 		$campos = $this->Campo->find('all', array('conditions' => array('objeto_id' => $widget['Objeto']['id'])));
-		
+
 		$chaves = $this->Chave->find('all', array('conditions' => array('objeto_id' => $widget['Objeto']['id'])));
-		
+
 		$valores = array();
 		foreach ($chaves as $chave) {
 			foreach ($campos as $campo) {
 				$valores[$chave['Chave']['id']][$campo['Campo']['id']] = $this->Valor->find('first', array('conditions' => array('chave_id' => $chave['Chave']['id'], 'campo_id' => $campo['Campo']['id'])));
 			}
 		}
-		
+
 		$this->set('objeto', $objeto);
 		$this->set('widget', $widget);
 		$this->set('campos', $campos);
@@ -113,8 +115,7 @@ class WidgetsController extends AppController {
 		$this->set('valores', $valores);
 
 		$this->set('widgetContent', $widgetContent);
-	
+
 	}
 
 }
-
