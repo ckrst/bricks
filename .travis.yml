@@ -118,12 +118,8 @@ before_script:
     }
     }" > app/Config/database.php
 script:
-  - pwd
-  - ls -la
-  - ls -la vendor/
-  - ls -la vendor/PHPUnit/
-  - ls -la /home/travis/.composer/vendor/phpunit/phpunit/PHPUnit/
-#  - sh -c "if [ '$PHPCS' != '1' ]; then ./lib/Cake/Console/cake test app Controller/WidgetsController --stderr; fi"
+#  - ls -la vendor/PHPUnit/
+  - sh -c "if [ '$PHPCS' != '1' ]; then ./lib/Cake/Console/cake test app Controller/WidgetsController --stderr; fi"
 #  - sh -c "if [ '$PHPCS' != '1' ]; then ./lib/Cake/Console/cake test app Model/Team --stderr; fi"
 #  - sh -c "if [ '$PHPCS' = '1' ]; then ~/.composer/vendor/bin/phpcs -p --extensions=php --standard=CakePHP ./lib/Cake; fi;"
 
