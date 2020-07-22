@@ -11,26 +11,26 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	public $uses = array('User');
-	public $components = array('Auth');
+	public $components = array('Auth', 'Session');
 
 	public $helpers = array('Form', 'Html');
-	
+
 	function beforeFilter() {
 		parent::beforeFilter();
-		
+
 		$this->Auth->allow('register');
 	}
-	
+
 	public function login() {
-		
+
 		if ($this->request->is('post')) {
-			
-			
+
+
 			$username = $this->request->data('username');
 			$password = $this->request->data('password');
-			
+
 			$user = $this->User->find('first', array('conditions' => array('username' => $username, 'password' => md5($password))));
-			
+
 			if ($this->Auth->login($user['User'])) {
 				return $this->redirect('/dashboard');
 			} else {
@@ -41,8 +41,8 @@ class UsersController extends AppController {
 			}
 		}
 	}
-	
-	
+
+
 	public function register() {
 		if ($this->request->is('post')) {
 			$email = $this->request->data('email');
@@ -70,12 +70,11 @@ class UsersController extends AppController {
 				);
 			}
 		}
-		
+
 	}
-	
+
 	public function logout() {
 		return $this->redirect($this->Auth->logout());
 	}
 
 }
-

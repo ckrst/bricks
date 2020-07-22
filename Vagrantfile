@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define "db" do |db|
         db.vm.provider "docker" do |docker|
             docker.name = "brix_db"
-            docker.image = "mysql"
+            docker.image = "mysql:5.6"
             docker.remains_running = true
             docker.ports = [ "3306:3306" ]
             docker.volumes = [

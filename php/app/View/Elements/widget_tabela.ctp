@@ -4,23 +4,23 @@
 <table class="table">
 	<thead>
 		<tr>
-			<?php 
+			<?php
 			foreach ($campos as $campo) {
-				var_dump($campo);
+				//var_dump($campo);
 				?>
 				<th><?php echo $campo['Campo']['nome']; ?></th>
-				<?php 
+				<?php
 			}
 			?>
 		</tr>
 	</thead>
 	<tbody>
-		<?php 
+		<?php
 		foreach ($chaves as $chave) {
 			$chaveId = intval($chave['Chave']['id']);
 			?>
 			<tr>
-				<?php 
+				<?php
 				foreach ($campos as $campo) {
 					$campoId = intval($campo['Campo']['id']);
 					$valorCampo = '';
@@ -29,11 +29,11 @@
 					}
 					?>
 					<td><?php echo $valorCampo; ?></td>
-					<?php 
+					<?php
 				}
 				?>
 			</tr>
-			<?php 
+			<?php
 		}
 		?>
 	</tbody>
