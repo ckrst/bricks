@@ -54,6 +54,10 @@ class UserappsController extends AppController {
 		$userApp = $this->UserApp->findById($id);
 		$this->set('userApp', $userApp);
 
+		$this->Mashup->app_id = $id;
+		$this->Mashup->nome = 'default';
+		$mashup = $this->Mashup->find();
+		$this->redirect('/mashups/run/' . $mashup['Mashup']['id']);
 	}
 
 	public function view($id) {

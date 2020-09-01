@@ -48,8 +48,10 @@
 				}
 				?>
 				<td>
-					<button type="button" class="btn btn-primary" id="btnEditWidget<?php echo $widget['Widget']['id']; ?>" data-toggle="modal" data-target="#divModalWidget<?php echo $widget['Widget']['id']; ?>" onclick="editItem<?php echo $chaveId; ?>();"><span class="glyphicon glyphicon-pencil"></span></button>
-					<button type="button" class="btn btn-primary" id="btnRemoveWidget<?php echo $widget['Widget']['id']; ?>" data-toggle="modal" data-target="#divModalWidget<?php echo $widget['Widget']['id']; ?>" onclick="removeItem<?php echo $chaveId; ?>();"><span class="glyphicon glyphicon-trash"></span></button>
+					<div class="pull-right">
+						<button type="button" class="btn btn-primary" id="btnEditWidget<?php echo $widget['Widget']['id']; ?>" data-toggle="modal" data-target="#divModalWidget<?php echo $widget['Widget']['id']; ?>" onclick="editItem<?php echo $chaveId; ?>();"><span class="glyphicon glyphicon-pencil"></span></button>
+						<button type="button" class="btn btn-primary" id="btnRemoveWidget<?php echo $widget['Widget']['id']; ?>" data-toggle="modal" data-target="#divModalWidget<?php echo $widget['Widget']['id']; ?>" onclick="removeItem<?php echo $chaveId; ?>();"><span class="glyphicon glyphicon-trash"></span></button>
+					</div>
 				</td>
 			</tr>
 
