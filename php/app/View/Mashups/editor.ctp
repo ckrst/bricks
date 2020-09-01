@@ -1,19 +1,17 @@
 <h1>Mashup Editor</h1>
 
-<pre><?php var_dump($mashup); ?></pre>
-
 <div class="row">
 	<div class="col-md-8">
 		<?php echo $this->Form->create('Mashup'); ?>
 			<div class="form-group">
 				<label for="txtMashupName">Name</label>
-				<input type="text" class="form-control" id="txtMashupName" placeholder="Enter mashup name" 
+				<input type="text" class="form-control" id="txtMashupName" placeholder="Enter mashup name"
 				value="<?php echo $mashup['Mashup']['nome']; ?>" name="data[Mashup][nome]">
 			</div>
 
 			<div class="form-group">
 				<label for="txtMashupLayout">Layout</label>
-				<input type="text" class="form-control" id="txtMashupLayout" placeholder="Enter mashup Layout" 
+				<input type="text" class="form-control" id="txtMashupLayout" placeholder="Enter mashup Layout"
 				value="<?php echo $mashup['Mashup']['layout']; ?>" name="data[Mashup][layout]">
 			</div>
 
@@ -76,5 +74,5 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>

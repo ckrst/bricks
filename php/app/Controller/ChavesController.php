@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 class ChavesController extends AppController {
 
 	public $uses = array('Objeto', 'Chave');
-	
+
 	public $components = array('RequestHandler');
 
 	/**
@@ -20,7 +20,7 @@ class ChavesController extends AppController {
 		$objeto_id = $this->request->query('objeto_id');
 		if ($objeto_id) {
 			$chaves = $this->Chave->find('all', array('conditions' => array('objeto_id' => $objeto_id)));
-			
+
 			$this->set(array(
 	            'chaves' => $chaves,
 	            '_serialize' => array('chaves')
@@ -29,7 +29,7 @@ class ChavesController extends AppController {
 			throw new BadRequestException('objeto');
 		}
 	}
-	
+
 	public function add() {
 		$this->Chave->create();
 		if ($this->Chave->save($this->request->data)) {
@@ -41,6 +41,9 @@ class ChavesController extends AppController {
 				'data' => array('message' => $message, 'id' => $this->Chave->id),
 				'_serialize' => array('data')
 		));
+
+		// $this->ajax($data);
+
 	}
 
 	public function view($id) {
@@ -50,7 +53,7 @@ class ChavesController extends AppController {
 				'_serialize' => array('chave')
 		));
 	}
-	
+
 	public function edit($id) {
 		$this->Chave->id = $id;
 		if ($this->Chave->save($this->request->data)) {
@@ -63,7 +66,7 @@ class ChavesController extends AppController {
 				'_serialize' => array('message')
 		));
 	}
-	
+
 	public function delete($id) {
 		if ($this->Chave->delete($id)) {
 			$message = 'Deleted';
@@ -76,4 +79,3 @@ class ChavesController extends AppController {
 		));
 	}
 }
-

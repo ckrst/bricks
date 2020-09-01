@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 
 class MashupsController extends AppController {
 
-	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Valor', 'MashupWidget', 'Userapp');
+	public $uses = array('Mashup', 'Widget', 'Campo', 'Chave', 'Objeto', 'Valor', 'MashupWidget', 'Userapp');
 
 	public $components = array('RequestHandler', 'Session');
 
@@ -95,19 +95,46 @@ class MashupsController extends AppController {
 		}
 
 		$mashupWidgets = $this->MashupWidget->find('all', array('conditions' => array('mashup_id' => $mashup['Mashup']['id'])));
+		// echo "<PRE>";
+		// var_dump($mashupWidgets);
 
 		$objetos = array();
+		$valores = array();
 		$chaves = array();
+		$campos = array();
 		foreach ($mashupWidgets as $mashupWidget) {
-			$objeto = $this->Widget->getObjeto($mashupWidget);
-			$objChaves = $this->Chave->findByObjetoId($objeto['Objeto']['id']);
+			// var_dump($objeto);
+			$widget = $this->Widget->read (null, $mashupWidget['Widget']['id']);
+
+			$this->Objeto->id = $widget['Objeto']['id'];
+			// $objeto = $this->Widget->getObjeto($mashupWidget);
+
+
+			// $this->Objeto->id = $objeto['Objeto']['id'];
+			$objeto = $this->Objeto->read (null, $widget['Objeto']['id']);
+
+			$objChaves = $this->Chave->find('all', array('conditions' => array('objeto_id' => $widget['Objeto']['id'])));
+			$objCampos = $this->Campo->find('all', array('conditions' => array('objeto_id' => $widget['Objeto']['id'])));
+
+			$objValores = array();
+			foreach ($objChaves as $chave) {
+				foreach ($objCampos as $campo) {
+					$objValores[$chave['Chave']['id']][$campo['Campo']['id']] = $this->Valor->find('first', array('conditions' => array('chave_id' => $chave['Chave']['id'], 'campo_id' => $campo['Campo']['id'])));
+				}
+			}
+
 			array_push($objetos, $objeto);
 			array_push($chaves, $objChaves);
+			array_push($campos, $objCampos);
+			array_push($valores, $objValores);
 		}
+
 
 		$this->set('mashup', $mashup);
 		$this->set('objetos', $objetos);
 		$this->set('chaves', $chaves);
+		$this->set('valores', $valores);
+		$this->set('campos', $campos);
 		$this->set('mashupWidgets', $mashupWidgets);
 		$this->set('mashupContent', $layoutContent);
 

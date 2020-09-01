@@ -86,16 +86,7 @@ class WidgetsController extends AppController {
 		$this->Objeto->id = $widget['Objeto']['id'];
 		$objeto = $this->Objeto->read (null, $widget['Objeto']['id']);
 
-		switch (intval($widget['Widget']['tipo'])) {
-			case WIDGET_TIPO_TABELA:
-				$widgetContent = 'widget_tabela';
-				break;
-			case WIDGET_TIPO_BUTTON_POPUP_INSERTER:
-				$widgetContent = 'widget_btn_popup_inserter';
-				break;
-			default:
-				break;
-		}
+		$widgetContent = $this->Widget->getWidgetContent($widget);
 
 		$campos = $this->Campo->find('all', array('conditions' => array('objeto_id' => $widget['Objeto']['id'])));
 

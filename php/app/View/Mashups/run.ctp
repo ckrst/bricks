@@ -6,8 +6,8 @@
 	</div>
 
 	<div class="panel-body">
-		
-		<?php echo $this->element($mashupContent, array('campos' => $objetos[0], 'chaves' => $chaves[0])); ?>
-	
+
+		<?php echo $this->element($mashupContent, array('objetos' => $objetos, 'campos' => $campos, 'chaves' => $chaves)); ?>
+
 	</div>
 </div>

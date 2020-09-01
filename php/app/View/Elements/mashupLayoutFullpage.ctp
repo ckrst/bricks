@@ -2,7 +2,8 @@
 
 //die(var_dump($mashupWidgets));
 
-foreach ($mashupWidgets as $mashupWidget) {
+
+foreach ($mashupWidgets as $index => $mashupWidget) {
 	switch (intval($mashupWidget['Widget']['tipo'])) {
 		case WIDGET_TIPO_TABELA:
 			$widgetContent = 'widget_tabela';
@@ -13,6 +14,6 @@ foreach ($mashupWidgets as $mashupWidget) {
 		default:
 			break;
 	}
-	
-	echo $this->element($widgetContent, array('widget' => $mashupWidget, 'campos' => $campos, 'chaves' => $chaves));
+
+	echo $this->element($widgetContent, array('objeto'=> $objetos[$index], 'widget' => $mashupWidget, 'campos' => $campos[$index], 'chaves' => $chaves[$index], 'valores' => $valores[$index]));
 }
