@@ -39,9 +39,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
         web.vm.provider "docker" do |docker|
             docker.name = "brix_web"
-            docker.build_dir = "."
+            # docker.build_dir = "."
             docker.cmd = ["apache2ctl", "-D", "FOREGROUND"]
-            # docker.image = "php:5.6-apache"
+            docker.image = "vinik/sprint:0.1"
             docker.ports = [ "8090:80" ]
             docker.privileged = true
             docker.link 'brix_db:brix_db'
@@ -54,11 +54,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             #    "/tmp" + ":/var/www/html/app/tmp"
             ]
             docker.env = {
-                'OPENSHIFT_MYSQL_DB_HOST' => 'brix_db',
-                'OPENSHIFT_MYSQL_DB_PORT' => 3306,
-                'OPENSHIFT_MYSQL_DB_USERNAME' => 'root',
-                'OPENSHIFT_MYSQL_DB_PASSWORD' => 'changeme',
-                'OPENSHIFT_GEAR_NAME' => 'brix',
+                'BRICKS_MYSQL_DB_HOST' => 'brix_db',
+                'BRICKS_MYSQL_DB_PORT' => 3306,
+                'BRICKS_MYSQL_DB_USERNAME' => 'root',
+                'BRICKS_MYSQL_DB_PASSWORD' => 'changeme',
+                'BRICKS_MYSQL_DB_NAME' => 'brix',
                 'APACHE_LOG_DIR' => '/var/log/apache2'
 
             }
@@ -71,9 +71,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
 
         # web.vm.provision "shell", inline: "echo 'foo'"
-
-
-
     end
 
 end
