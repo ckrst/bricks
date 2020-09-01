@@ -1,10 +1,10 @@
 <?php
 
-define('DB_HOST', 	getenv('OPENSHIFT_MYSQL_DB_HOST') 		== '' ? 'localhost' 	: getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT',	getenv('OPENSHIFT_MYSQL_DB_PORT'));
-define('DB_USER',	getenv('OPENSHIFT_MYSQL_DB_USERNAME') 	== '' ? 'root' 			: getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS',	getenv('OPENSHIFT_MYSQL_DB_PASSWORD')) 	== '' ? '' 				: getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-define('DB_NAME',	getenv('OPENSHIFT_GEAR_NAME') 			== '' ? 'brix' 			: getenv('OPENSHIFT_GEAR_NAME'));
+define('DB_HOST', getenv('BRICKS_MYSQL_DB_HOST')			== '' ? 'localhost' : getenv('BRICKS_MYSQL_DB_HOST'));
+define('DB_PORT',	getenv('BRICKS_MYSQL_DB_PORT') 			== '' ? '3306' 			: getenv('BRICKS_MYSQL_DB_PORT'));
+define('DB_USER',	getenv('BRICKS_MYSQL_DB_USERNAME') 	== '' ? 'root' 			: getenv('BRICKS_MYSQL_DB_USERNAME'));
+define('DB_PASS',	getenv('BRICKS_MYSQL_DB_PASSWORD')	== '' ? '' 					: getenv('BRICKS_MYSQL_DB_PASSWORD'));
+define('DB_NAME',	getenv('BRICKS_MYSQL_DB_NAME') 			== '' ? 'brix' 			: getenv('BRICKS_MYSQL_DB_NAME'));
 
 /**
  *
