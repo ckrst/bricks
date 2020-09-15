@@ -1,0 +1,33 @@
+format_version: 3
+pipelines:
+  BricksPipeline1:
+    group: sample
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://github.com/ckrst/bricks.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    stages:
+    - Teste:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          run-unit-tests:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -la
+                command: ls
+                run_if: passed
+            - exec:
+                command: pwd
+                run_if: passed
