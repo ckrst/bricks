@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bricks
+  description: |
+    Bricks is an open-source tool for creating simple apps
+  links:
+    - title: Website
+      url: http://backstage.io
+  annotations:
+    github.com/project-slug: ckrst/bricks
+    # backstage.io/techdocs-ref: url:https://github.com/backstage/backstage
+    # lighthouse.com/website-url: https://backstage.io
+spec:
+  type: website
+  owner: ckrst
+  lifecycle: experimental
